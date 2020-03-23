@@ -1,0 +1,27 @@
+<div class="row">
+
+	<!-- <app-product class="col-lg-4 col-md-6 mb-4"></app-product >
+  <app-product class="col-lg-4 col-md-6 mb-4"></app-product >
+  <app-product class="col-lg-4 col-md-6 mb-4"></app-product >
+  <app-product class="col-lg-4 col-md-6 mb-4"></app-product >
+   -->
+
+	<div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let Product of products">
+		<div class="card h-100">
+			<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+				<div class="card-body">
+					<h4 class="card-title">
+						<a href="#">{{Product.name}}</a>
+					</h4>
+					<h5>${{Product.price}}</h5>
+					<p class="card-text">{{Product.desc}}
+					</p>
+				</div>
+				<div class="card-footer">
+          <button class="btn btn-primary" (click)="delete(Product.id)">Xóa</button>||
+        	<button class= "btn btn-primary" routerLink="product/{{Product.id}}">Chi Tiết</button><br/>
+					<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small> 
+				</div>
+		</div>
+	</div> 
+</div>
